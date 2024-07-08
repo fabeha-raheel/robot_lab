@@ -1,4 +1,4 @@
-from real_robot.tasks.locomotion.velocity.velocity_env_cfg import LocomotionVelocityRoughEnvCfg
+from real_robot_lab.tasks.locomotion.velocity.velocity_env_cfg import LocomotionVelocityRoughEnvCfg
 
 from omni.isaac.lab.utils import configclass
 
@@ -7,7 +7,10 @@ import math
 ##
 # Pre-defined configs
 ##
-from omni.isaac.lab_assets.unitree import UNITREE_A1_CFG  # isort: skip
+# from omni.isaac.lab_assets.unitree import UNITREE_A1_CFG  # isort: skip
+
+# use local assets
+from real_robot_lab.assets.unitree import UNITREE_A1_CFG  # isort: skip
 
 
 @configclass

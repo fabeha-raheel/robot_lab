@@ -11,8 +11,8 @@ title = "Real Robot Extension"
 author = "Ziqi Fan"
 maintainer = "Ziqi Fan"
 description="Real Robot Training for Isaac Lab"
-repository = "https://github.com/fan-ziqi/omni.isaaclab.real_robot.git"
-keywords = ["extension", "real_robot", "isaaclab"]
+repository = "https://github.com/fan-ziqi/real_robot_lab.git"
+keywords = ["extension", "real_robot_lab", "isaaclab"]
 
 [dependencies]
 "omni.isaac.lab" = {}
@@ -21,7 +21,7 @@ keywords = ["extension", "real_robot", "isaaclab"]
 # NOTE: Add additional dependencies here
 
 [[python.module]]
-name = "real_robot"
+name = "real_robot_lab"
 
 [isaaclab_settings]
 # TODO: Uncomment and list any apt dependencies here.
