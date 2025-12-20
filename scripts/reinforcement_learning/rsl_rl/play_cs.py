@@ -1,25 +1,22 @@
 # Copyright (c) 2024-2025 Ziqi Fan
 # SPDX-License-Identifier: Apache-2.0
 
-# Copyright (c) 2024-2025, The Isaac Lab Project Developers.
+# Copyright (c) 2022-2025, The Isaac Lab Project Developers (https://github.com/isaac-sim/IsaacLab/blob/main/CONTRIBUTORS.md).
 # All rights reserved.
 #
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: BSD-3-Clause
 
 """Script to play a checkpoint if an RL agent from RSL-RL."""
 
 """Launch Isaac Sim Simulator first."""
 
 import argparse
-import os
 import sys
 
 from isaaclab.app import AppLauncher
 
 # local imports
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import cli_args  # isort: skip
-from rl_utils import camera_follow
 
 # add argparse arguments
 parser = argparse.ArgumentParser(description="Train an RL agent with RSL-RL.")
@@ -62,6 +59,7 @@ simulation_app = app_launcher.app
 """Rest everything follows."""
 
 import gymnasium as gym
+import os
 import time
 import torch
 
@@ -80,11 +78,17 @@ from isaaclab.terrains import TerrainImporterCfg
 from isaaclab.utils.assets import retrieve_file_path
 from isaaclab.utils.dict import print_dict
 from isaaclab.utils.pretrained_checkpoint import get_published_pretrained_checkpoint
+
 from isaaclab_rl.rsl_rl import RslRlBaseRunnerCfg, RslRlVecEnvWrapper, export_policy_as_jit, export_policy_as_onnx
+
+import robot_lab.tasks  # noqa: F401  # isort: skip
 from isaaclab_tasks.utils import get_checkpoint_path
 from isaaclab_tasks.utils.hydra import hydra_task_config
 
-import robot_lab.tasks  # noqa: F401
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from rl_utils import camera_follow
+
+# PLACEHOLDER: Extension template (do not remove this comment)
 
 
 @hydra_task_config(args_cli.task, args_cli.agent)
