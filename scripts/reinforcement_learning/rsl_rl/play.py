@@ -223,7 +223,6 @@ def main(env_cfg: ManagerBasedRLEnvCfg | DirectRLEnvCfg | DirectMARLEnvCfg, agen
         with torch.inference_mode():
             # agent stepping
             actions = policy(obs)
-            # actions = torch.zeros_like(actions)
             # env stepping
             obs, _, dones, _ = env.step(actions)
             # reset recurrent states for episodes that have terminated
