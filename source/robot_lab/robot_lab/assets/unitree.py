@@ -92,7 +92,11 @@ UNITREE_GO2_CFG = ArticulationCfg(
         ),
     ),
     init_state=ArticulationCfg.InitialStateCfg(
+<<<<<<< HEAD
         pos=(0.0, 0.0, 0.38),
+=======
+        pos=(0.0, 0.0, 0.3),
+>>>>>>> 991d14d850eb3a47d9fa1f9ba01fcec32a35593d
         joint_pos={
             ".*L_hip_joint": 0.0,
             ".*R_hip_joint": -0.0,
@@ -118,6 +122,60 @@ UNITREE_GO2_CFG = ArticulationCfg(
 """Configuration of Unitree Go2 using DC motor.
 """
 
+<<<<<<< HEAD
+=======
+UNITREE_JAMAL_CFG = ArticulationCfg(
+    spawn=sim_utils.UrdfFileCfg(
+        fix_base=False,
+        merge_fixed_joints=True,
+        replace_cylinders_with_capsules=False,
+        asset_path=f"{ISAACLAB_ASSETS_DATA_DIR}/Robots/unitree/jamal_description/urdf/jamal_description.urdf",
+        activate_contact_sensors=True,
+        rigid_props=sim_utils.RigidBodyPropertiesCfg(
+            disable_gravity=False,
+            retain_accelerations=False,
+            linear_damping=0.0,
+            angular_damping=0.0,
+            max_linear_velocity=1000.0,
+            max_angular_velocity=1000.0,
+            max_depenetration_velocity=1.0,
+        ),
+        articulation_props=sim_utils.ArticulationRootPropertiesCfg(
+            enabled_self_collisions=False, solver_position_iteration_count=4, solver_velocity_iteration_count=0
+        ),
+        joint_drive=sim_utils.UrdfConverterCfg.JointDriveCfg(
+            gains=sim_utils.UrdfConverterCfg.JointDriveCfg.PDGainsCfg(stiffness=0, damping=0)
+        ),
+    ),
+    init_state=ArticulationCfg.InitialStateCfg(
+        pos=(0.0, 0.0, 0.37),
+        joint_pos={
+            ".*L_hip_joint": 0.0,
+            ".*R_hip_joint": -0.0,
+            "F.*_thigh_joint": 0.72,
+            "R.*_thigh_joint": 0.72,
+            ".*_calf_joint": -1.35,
+        },
+        joint_vel={".*": 0.0},
+    ),
+    soft_joint_pos_limit_factor=0.9,
+    actuators={
+        "legs": DCMotorCfg(
+            joint_names_expr=[".*"],
+            effort_limit=48,
+            saturation_effort=120,
+            velocity_limit=30.0,
+            stiffness=40.0,
+            damping=0.5,
+            friction=0.0,
+        ),
+    },
+)
+"""Configuration of Unitree Jamal using DC motor.
+"""
+
+
+>>>>>>> 991d14d850eb3a47d9fa1f9ba01fcec32a35593d
 UNITREE_GO2W_CFG = ArticulationCfg(
     spawn=sim_utils.UrdfFileCfg(
         fix_base=False,
