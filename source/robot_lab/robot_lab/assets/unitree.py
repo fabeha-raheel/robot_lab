@@ -122,8 +122,6 @@ UNITREE_GO2_CFG = ArticulationCfg(
 """Configuration of Unitree Go2 using DC motor.
 """
 
-<<<<<<< HEAD
-=======
 UNITREE_JAMAL_CFG = ArticulationCfg(
     spawn=sim_utils.UrdfFileCfg(
         fix_base=False,
@@ -175,7 +173,6 @@ UNITREE_JAMAL_CFG = ArticulationCfg(
 """
 
 
->>>>>>> 991d14d850eb3a47d9fa1f9ba01fcec32a35593d
 UNITREE_GO2W_CFG = ArticulationCfg(
     spawn=sim_utils.UrdfFileCfg(
         fix_base=False,
